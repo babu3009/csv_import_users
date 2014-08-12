@@ -67,7 +67,7 @@ private
   def validate_file_extension
   	return if params[:user_import].blank?
     file_name = params[:user_import][:csv].original_filename
-	  flash_error_and_render(l(:error_file_not_of_csv_extension)) if (file_name.count('.') > 1 or File.extname(file_name) != (".csv"))
+	  flash_error_and_render(l(:error_file_not_of_csv_extension)) if File.extname(file_name) != (".csv")
   end
 
   def validate_csv
